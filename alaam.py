@@ -1,20 +1,19 @@
-import time
 import subprocess
+import time
 
-# Path ke script Python utama
-script_paths = ["C:/Users/Administrator/Desktop/ujicoba/proxy.py", "C:/Users/Administrator/Desktop/upload.py"]
+def run_scripts():
+    while True:
+        # Menjalankan script 1
+        print("Menjalankan script1.py...")
+        subprocess.run(["python", "proxy.py"])
+        
+        # Menjalankan script 2
+        print("Menjalankan script2.py...")
+        subprocess.run(["python", "upload.py"])
+        
+        # Tunggu selama 5 menit
+        print("Menunggu selama 5 menit sebelum menjalankan ulang...")
+        time.sleep(5 * 60)  # 5 menit dalam detik
 
-# Fungsi untuk menjalankan script
-def run_script(script_path):
-    try:
-        print(f"Menjalankan {script_path}...")
-        subprocess.run(["python", script_path], check=True)
-    except subprocess.CalledProcessError as e:
-        print(f"Script {script_path} gagal dijalankan: {e}")
-
-# Loop untuk menjalankan kedua script secara berurutan dengan interval 5 menit
-while True:
-    for script_path in script_paths:
-        run_script(script_path)  # Menunggu script selesai sebelum lanjut
-        print(f"Script {script_path} selesai. Menunggu 5 menit sebelum melanjutkan...")
-        time.sleep(300)  # Tunggu selama 300 detik (5 menit)
+if __name__ == "__main__":
+    run_scripts()
