@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/claude89757/free_https_proxies/refs/heads/main/https_proxies.txt
+https://raw.githubusercontent.com/dpangestuw/Free-Proxy/refs/heads/main/http_proxies.txt
